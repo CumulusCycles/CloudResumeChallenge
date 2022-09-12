@@ -1,0 +1,51 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  demo-app
+  Sample SAM Template for demo-app
+
+Globals:
+  Function:
+    Timeout: 3
+
+Resources:
+  DemoDynamoDBTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: demo-app-tbl
+      BillingMode: PAY_PER_REQUEST
+      AttributeDefinitions:
+        - AttributeName: "ID"
+          AttributeType: "S"
+      KeySchema:
+        - AttributeName: "ID"
+          KeyType: "HASH"
+
+  DemoLambdaFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Policies:
+        - DynamoDBCrudPolicy:
+            TableName: demo-app-tbl
+      CodeUri: demo-app/
+      Handler: app.lambda_handler
+      Runtime: python3.8
+      Architectures:
+        - x86_64
+      Events:
+        Visits:
+          Type: Api
+          Properties:
+            Path: /visit
+            Method: post 
+
+Outputs:
+  DemoLambdaFunctionApi:
+    Description: "API Gateway endpoint URL for Prod stage for DemoLambdaFunction"
+    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/hello/"
+  DemoLambdaFunction:
+    Description: "DemoLambdaFunction ARN"
+    Value: !GetAtt DemoLambdaFunction.Arn
+  DemoLambdaFunctionIamRole:
+    Description: "Implicit IAM Role created for DemoLambdaFunction"
+    Value: !GetAtt DemoLambdaFunction.Arn
