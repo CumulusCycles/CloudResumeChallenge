@@ -1,0 +1,193 @@
+/*
+Template Name: Puro
+Version: 1.0.0
+Theme URL: https://angrystudio.com/themes/puro-free-bootstrap-4-cv-template-for-developers
+Framework: Bootstrap
+Author: AngryStudio
+License: https://angrystudio.com/license/
+*/
+:root {
+    --main-color: #4b90df;
+    --main-hover-color: #4b5adf;
+}
+body {
+    line-height: 24px;
+    font: 16px Helvetica, Sans-Serif;    
+}
+.bg-progress {
+    background-color: var(--main-hover-color);
+}
+.btn-primary {
+    background-color: var(--main-color);
+    border-color: var(--main-color);
+}
+.btn-primary:hover {
+    background-color: var(--main-hover-color);
+    border-color: var(--main-hover-color);
+}
+.btn-primary:not(:disabled):not(.disabled):active {
+    background-color: var(--main-hover-color);
+    border-color: var(--main-hover-color);
+}
+.btn-primary:not(:disabled):not(.disabled):active:focus {
+    box-shadow: none;
+}
+.btn-primary.focus,
+.btn-primary:focus {
+    background-color: var(--main-hover-color);
+    border-color: var(--main-hover-color);
+    box-shadow: none;
+}
+.header-content {
+    padding: 220px 0;
+}
+.sidebar {
+    position: sticky;
+    top: 20px;
+}
+.name {
+    font-size: 1.5rem;
+}
+.contact-info {
+    font-size: 1rem;
+}
+.contact-info img {
+    filter: invert(1);
+}
+.social-icons ul li {
+    display: inline-block;
+    margin: 0 2.5px;
+}
+.social-icons svg {
+    width: 18px;
+}
+
+.visitors {
+    display: inline-block;
+    margin: 15px 0 0 0;
+}
+
+h3 {
+    font-style: italic;
+    font-weight: bold;
+    font-size: 18px;
+}
+.content h3 {
+    font-size: 1.2rem;
+    position: relative;
+    font-style: italic;
+}
+.content h3:before {
+    content: "";
+    width: 25%;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--main-color), transparent);
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+}
+
+.job-name {
+    font-size: .85em;
+}
+
+.aws-badge {
+    float: left;
+}
+
+#about p {
+    font-family: Georgia, Serif;
+    font-style: italic;
+    color: #666;
+}
+
+#about p a, a {
+    color: #999;
+    text-decoration: none;
+    border-bottom: 1px dotted #999;
+}
+
+#about p a:hover, a:hover {
+    border-bottom-style: solid;
+    text-decoration: none;
+    color: #000;
+}
+
+.date {
+    font-family: Georgia, Serif;
+    font-size: 16px;
+    color: #999;
+    font-weight: normal;
+}
+
+.title {
+    font-style: italic;
+    font-family: Georgia, Serif;
+    font-size: 16px;
+    color: #999;
+    font-weight: normal;
+}
+
+.social-icons ul li a {
+    border-bottom: none;
+}
+#visits {
+    display: inline-block;
+    position: relative;
+    top: 1px;
+    border: 5px solid #fff;
+    border-top: 5px solid #fff;
+    width: 30px !important;
+    min-width: 30px !important;
+    height: 20px !important;
+    
+}
+.loader {
+    display: inline-block;
+    position: relative;
+    top: 5px;
+    border: 5px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 5px solid #3498db;
+    width: 17px;
+    height: 19px;
+    -webkit-animation: spin 1s linear infinite; /* Safari */
+    animation: spin 1s linear infinite;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.hidden {
+    display: none;
+}
+.visible {
+    display: block;
+}
+
+@media (max-width: 767.98px) {
+    body {
+        font-size: 1rem;
+    }
+
+    .content h3 {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 575.98px) {
+    body {
+        font-size: 0.9rem;
+    }
+    .content h3 {
+        font-size: 1.05rem;
+    }
+}
